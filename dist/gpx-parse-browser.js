@@ -140,7 +140,7 @@ exports.calculateBearing = function(lat1, lon1, lat2, lon2){
  };
  
  var _getExtensions = function(extensions) {
- console.log("🚀 ~ file: gpx-parse.js ~ line 40 ~ extensions", extensions)
+  console.log("🚀 ~ file: gpx-parse.js ~ line 40 ~ extensions", extensions)
    var visibility = extensions[0].visibility[0];
    console.log("🚀 ~ file: gpx-parse.js ~ line 42 ~ visibility", visibility)
    var id = extensions[0].visibility[1];
@@ -245,6 +245,7 @@ exports.calculateBearing = function(lat1, lon1, lat2, lon2){
  
    extent = new GpxExtent();
    metadata = new GpxMetaData(gpx.$.creator, gpx.time, extent);
+   console.log("🚀 ~ file: gpx-parse.js ~ line 178 ~ _getExtensions(gpx.extensions)", _getExtensions(gpx.extensions))
  
    return new GpxResult(metadata, _getWayPoints(gpx.wpt), _getRoutes(gpx.rte), _getTracks(gpx.trk), _getExtensions(gpx.extensions));
  };
